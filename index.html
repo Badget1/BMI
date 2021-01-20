@@ -13,14 +13,14 @@
         <div class="p-5 mt-5 mx-auto border border-light rounded shadow">
             <h1 class="display-4">KMI <small>kalkulaator</small></h1>
             <div class="mt-4">
-                <span id="weight-indicator" class="badge badge-primary">Kehakaal 0 kg</span>
-                <input id="weight-slider" class="custom-range" type="range" min="1" max="250" step=".1" value="0">
-                <span id="height-indicator" class="badge badge-info">Pikkus 0 cm</span>
-                <input id="height-slider" class="custom-range" type="range" min="1" max="300" step=".5" value="0">
+                <span id="weight-indicator" class="badge badge-primary">Kehakaal 50 kg</span>
+                <input id="weight-slider" class="custom-range" type="range" min="1" max="250" step=".1" value="50">
+                <span id="height-indicator" class="badge badge-info">Pikkus 150 cm</span>
+                <input id="height-slider" class="custom-range" type="range" min="1" max="300" step=".5" value="150">
             </div>
             <div class="mt-3">
                 <span>Sinu KMI:</span>
-                <span id="bmi-result" class="font-weight-bold">0</span>
+                <span id="bmi-result" class="font-weight-bold">22.22</span>
             </div>
         </div>
     </div>
@@ -55,8 +55,8 @@
             persistSelection(currentHeight, currentWeight);
         }
 
-        function calculateBMI(heightInCentimeters, weightInKilograms) {
-            const calculation = parseFloat((weightInKilograms / (Math.pow(heightInCentimeters, 2) / 100)) * 100).toFixed(2)
+        function calculateBMI(heightInMeters, weightInKilograms) {
+            const calculation = parseFloat((weightInKilograms / (Math.pow(heightInMeters, 2) / 100)) * 100).toFixed(2)
 
             calculationResultElement.textContent = calculation;
 
